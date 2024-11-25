@@ -33,3 +33,24 @@ target_positions = [
     (1.54506, -0.99923)
 ]
 
+# Plot obstacles
+for obstacle in obstacles:
+    polygon = Polygon(obstacle, facecolor='gray', alpha=0.3)
+    ax.add_patch(polygon)
+
+# Plot initial positions
+ax.scatter(initial_positions[0][0], initial_positions[0][1], color='blue', s=100, label='Robot 1 Start')
+ax.scatter(initial_positions[1][0], initial_positions[1][1], color='red', s=100, label='Robot 2 Start')
+
+# Plot target positions
+target_x = [p[0] for p in target_positions]
+target_y = [p[1] for p in target_positions]
+ax.scatter(target_x, target_y, color='green', s=50, label='Targets')
+
+# Add grid and legend
+plt.grid(True)
+plt.legend()
+
+# Save the plot to a file
+plt.savefig('robot_environment.png')
+plt.close()
