@@ -69,3 +69,15 @@ for i, (x, y) in enumerate(zip(x_coords, y_coords)):
 
 plt.savefig('robot_new_path.png')
 plt.close()
+
+#write the path of both to a txt file
+
+with open('robot_new_path.txt', 'w') as f:
+    for x, y in zip(x_coords, y_coords):
+        f.write(f'{x},{y}\n')
+        
+with open('robot_new_path_red.txt', 'w') as f:
+    for x, y in zip(x_coords_red, y_coords_red):
+        f.write(f'{x},{y}\n')
+
+print('Done!')
