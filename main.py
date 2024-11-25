@@ -1,5 +1,3 @@
-import mesa
-
 InitialPositions = open("InitialPositions.txt", "r")
 Obstacle_1 = open("Obstacle_1.txt", "r")
 Obstacle_2 = open("Obstacle_2.txt", "r")
